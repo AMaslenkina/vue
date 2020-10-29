@@ -1,8 +1,9 @@
 <template>
     <div class="card">
 
-      <div>{{name}}</div>
-      <div>{{sunrise}}</div>
+      <div>Температура: {{Math.ceil(temp-273)}}</div>
+      <div>Ощущается: {{Math.ceil(feels_like-273)}}</div>
+
     </div>
 </template>
 
@@ -10,10 +11,10 @@
 export default {
   name: 'WeatherCard',
   props: {
-    country: null,
+    timezone: null,
     name: null,
     main: null,
-    sunrise: null,
+    feels_like: null,
     temp: null
   }
 }

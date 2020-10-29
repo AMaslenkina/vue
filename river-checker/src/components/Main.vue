@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>{{weather.country}}</h1>
+    <h1>{{weather.name}}</h1>
     <Weather
-            :country="weather.country"
+            :timezone="weather.timezone"
             :name="weather.name"
             :temp="weather.temp"
-            :sunrise="weather.sunrise"
+            :feels_like="weather.feels_like"
             :main="weather.main">
     </Weather>
   </div>
@@ -24,10 +24,10 @@ export default {
       regApi: new Reg(),
       weatherMass: [],
       weather: {
-        country: null,
+        timezone: null,
         name: null,
         temp: null,
-        sunrise: null,
+        feels_like: null,
         main: null
       }
     }
@@ -35,13 +35,17 @@ export default {
   methods: {
     getData: function () {
       this.regApi.getData(1).then(data => {
-        this.weather.country = data.data.city.country
+        /* this.weather.country = data.data.city.country
         this.weather.name = data.data.city.name
         this.weather.temp = data.data.city.temp
         this.weather.sunrise = data.data.city.sunrise
         this.weather.main = data.data.city.main
-        this.weatherMass = data.data.data
-        console.log(this.weatherMass)
+        console.log(this.weatherMass) */
+        console.log(data.data.name)
+        this.weather.name = data.data.name
+        this.weather.main = data.data.weather.main
+        this.weather.temp = data.data.main.temp
+        this.weather.feels_like = data.data.main.feels_like
       })
     }
   },

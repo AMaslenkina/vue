@@ -20,7 +20,7 @@ export default {
   margin-top: 60px;
 }
 html, body{
-  background: url("assets/img/background.jpg") 100% 100% no-repeat;
+  background: url("assets/img/back.jpeg") 100% 100% no-repeat;
   height: 100%;
 }
   ul{

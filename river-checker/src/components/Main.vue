@@ -1,13 +1,19 @@
 <template>
   <div>
-    <h1>{{weather.name}}</h1>
+    <h1>{{weather.name}}
+      <img :src="`https://www.countryflags.io/${weather.country}/flat/48.png`" alt="pict not found"></h1>
     <Weather
-            :timezone="weather.timezone"
+            :icon="weather.icon"
             :name="weather.name"
             :temp="weather.temp"
             :feels_like="weather.feels_like"
-            :main="weather.main">
+            :main="weather.main"
+            :country="weather.country">
     </Weather>
+    <p>
+      Enter the city name: <input v-model="city">
+    <p/>
+    <button @click="getData">Enter</button>
   </div>
 </template>
 
@@ -23,28 +29,33 @@ export default {
     return {
       regApi: new Reg(),
       weatherMass: [],
+      city: '',
       weather: {
-        timezone: null,
+        icon: null,
         name: null,
         temp: null,
         feels_like: null,
-        main: null
+        main: null,
+        country: null
       }
     }
   },
+
   methods: {
     getData: function () {
-      this.regApi.getData(1).then(data => {
+      this.regApi.getData(this.city).then(data => {
         console.log(data.data.name)
+        this.weather.icon = data.data.weather[0].icon
         this.weather.name = data.data.name
-        this.weather.main = data.data.weather.main
+        this.weather.main = data.data.weather[0].main
         this.weather.temp = data.data.main.temp
         this.weather.feels_like = data.data.main.feels_like
+        this.weather.country = data.data.sys.country
       })
     }
   },
   created () {
-    this.getData()
+    this.getData(this.city)
   }
 }
 </script>
@@ -52,7 +63,7 @@ export default {
 <style scoped>
 
 h1{
-  color: #d2511e;
+  color: #ee7749;
 }
 h3{
   color: coral;

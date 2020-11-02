@@ -35,12 +35,6 @@ export default {
   methods: {
     getData: function () {
       this.regApi.getData(1).then(data => {
-        /* this.weather.country = data.data.city.country
-        this.weather.name = data.data.city.name
-        this.weather.temp = data.data.city.temp
-        this.weather.sunrise = data.data.city.sunrise
-        this.weather.main = data.data.city.main
-        console.log(this.weatherMass) */
         console.log(data.data.name)
         this.weather.name = data.data.name
         this.weather.main = data.data.weather.main

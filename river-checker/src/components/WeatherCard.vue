@@ -1,8 +1,8 @@
 <template>
     <div class="card">
 
-      <div>Температура: {{Math.ceil(temp-273)}}</div>
-      <div>Ощущается: {{Math.ceil(feels_like-273)}}</div>
+      <div>Температура: {{Math.ceil(temp-273)}} °C</div>
+      <div>Ощущается: {{Math.ceil(feels_like-273)}} °C</div>
 
     </div>
 </template>

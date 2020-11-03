@@ -6,6 +6,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "bootstrap-vue": "^2.18.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

@@ -13,7 +13,7 @@
     <p>
       Enter the city name: <input v-model="city">
     <p/>
-    <button @click="getData">Enter</button>
+    <button type="button" class="btn btn-outline-dark" @click="getData">Enter</button>
   </div>
 </template>
 

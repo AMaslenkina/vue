@@ -2,7 +2,7 @@
     <div class="card">
 
       <div>Temperature: {{Math.ceil(temp-273)}} °C</div>
-      <div>Temp feels like: {{Math.ceil(feels_like-273)}} °C</div>
+      <div>Temp. feels like: {{Math.ceil(feels_like-273)}} °C</div>
       <div>{{main}}</div>
       <img :src="`http://openweathermap.org/img/wn/${icon}@2x.png`" alt="pict not found">
     </div>

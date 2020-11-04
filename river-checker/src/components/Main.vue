@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{weather.name}}
-      <img :src="`https://www.countryflags.io/${weather.country}/flat/48.png`" alt="pict not found"></h1>
+    <img :src="`https://www.countryflags.io/${weather.country}/flat/48.png`" alt="pict not found"></h1>
     <Weather
             :icon="weather.icon"
             :name="weather.name"
@@ -10,10 +10,11 @@
             :main="weather.main"
             :country="weather.country">
     </Weather>
-    <p>
-      Enter the city name: <input v-model="city">
-    <p/>
-    <button type="button" class="btn btn-outline-dark" @click="getData">Enter</button>
+    <b-col md="6" offset-md="3">
+    <b-form-input v-model="city" placeholder="Enter the city name"></b-form-input>
+    </b-col>
+    <br>
+    <b-button size="lg" pill variant="outline-dark" @click="getData">Enter</b-button>
   </div>
 </template>
 
@@ -64,6 +65,7 @@ export default {
 
 h1{
   color: #ee7749;
+  font-family: "Standard Symbols L";
 }
 h3{
   color: coral;
@@ -89,4 +91,5 @@ a:active {
   color: #2656e5;
   border-bottom: 1px dashed;
 }
+
 </style>

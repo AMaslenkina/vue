@@ -12,16 +12,17 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Chilanka;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   text-align: center;
   margin-top: 60px;
+  font-size: large;
 }
-html, body{
-  background: url("assets/img/back.jpeg") 100% 100% no-repeat;
-  height: 100%;
+body{
+  background: url("assets/img/back.jpeg") 100%;
+
 }
   ul{
   list-style-type: none;

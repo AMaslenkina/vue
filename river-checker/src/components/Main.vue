@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{weather.name}}
+    <h1 class="display-5"><b>{{weather.name}}</b>
     <img :src="`https://www.countryflags.io/${weather.country}/flat/48.png`" alt="pict not found"></h1>
     <Weather
             :icon="weather.icon"
@@ -56,6 +56,7 @@ export default {
     }
   },
   created () {
+    this.city = 'Gomel'
     this.getData(this.city)
   }
 }
@@ -65,7 +66,7 @@ export default {
 
 h1{
   color: #ee7749;
-  font-family: "Standard Symbols L";
+  font-family: Chilanka;
 }
 h3{
   color: coral;

@@ -24,12 +24,12 @@ export default {
 <style scoped>
   .card{
     border-radius: 15px;
-    background: rgba(200,200,200,0.5);
+    background: rgba(255,255,255,0.5);
     color: #074990;
     font-weight: bold;
-    width: 250px;
+    width: 270px;
     margin: 20px;
-    height: 170px;
+    height: 190px;
     padding: 5px;
     display: inline-block;
     transition: .3s;
